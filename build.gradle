@@ -1,0 +1,23 @@
+plugins {
+    id 'java'
+}
+
+group = 'org.example'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation group: 'org.testng', name: 'testng', version: '7.9.0'
+    testImplementation group: 'io.rest-assured', name: 'rest-assured', version: '5.3.2'
+    testImplementation group: 'org.json', name: 'json', version: '20240303'
+
+    //testImplementation platform('org.junit:junit-bom:5.9.1')
+    //testImplementation 'org.junit.jupiter:junit-jupiter'
+}
+
+test {
+    useTestNG()
+}
