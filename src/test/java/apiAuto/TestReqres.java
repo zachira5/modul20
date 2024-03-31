@@ -1,24 +1,20 @@
-package apiauto;
-
-//import com.google.inject.matcher.Matchers;
-
+package apiAuto;
 import io.restassured.RestAssured;
 import org.hamcrest.Matchers;
 import org.json.JSONObject;
 import org.testng.annotations.Test;
 
+public class TestReqres {
 
-public class testQeqres {
     @Test
-    public void testGetListUsers(){
+    public void test1(){
         RestAssured
                 .given().when()
-                .get("https://reqres.in/api/users?page=2")
+                .get("https://reqres.in/api/users?page=1")
                 .then().log().all()
                 .assertThat().statusCode(200)
                 .assertThat().body("per_page", Matchers.equalTo(6))
                 .assertThat().body("page", Matchers.equalTo(1));
-
     }
 
     @Test
@@ -43,3 +39,4 @@ public class testQeqres {
 
     }
 }
+
